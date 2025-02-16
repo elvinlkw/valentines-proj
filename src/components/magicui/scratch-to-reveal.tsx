@@ -143,6 +143,7 @@ export const ScratchToReveal: React.FC<ScratchToRevealProps> = ({
         setIsComplete(true);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         startAnimation();
+        onComplete?.();
       }
     }
   };

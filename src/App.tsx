@@ -1,5 +1,7 @@
 import { Scratch } from '@/components/scratch/scratch';
 import { ShineBorder } from '@/components/magicui/shine-border';
+import { LineShadowText } from '@/components/magicui/line-shadow-text';
+import { SparklesText } from '@/components/magicui/sparkles-text';
 
 const cardContainerStyle = {
   display: 'grid',
@@ -30,7 +32,8 @@ function App() {
             <div style={cardContainerStyle}>
               <div className="flex flex-col gap-8 items-center">
                 <h1 className="text-7xl text-red-500 rotate-2 w-3/4 text-center">
-                  Scratch to Reveal!!
+                  Scratch to{' '}
+                  <LineShadowText shadowColor="red">Reveal!!</LineShadowText>
                 </h1>
                 <div className="rotate-2 text-lg w-3/4 text-wrap">
                   <p className="text-red-500 mb-2">
@@ -46,7 +49,11 @@ function App() {
                     many more amazing memories with you! I love you forever and
                     always!
                   </p>
-                  <p className="text-red-500 text-end mt-2 pr-4">Love, Elvin</p>
+                  <SparklesText
+                    className="text-red-500 text-end mt-2 pr-4 text-md"
+                    sparklesCount={5}
+                    text="Love, Elvin"
+                  />
                 </div>
               </div>
               <Scratch />

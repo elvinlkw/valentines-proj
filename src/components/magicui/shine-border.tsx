@@ -36,6 +36,7 @@ export function ShineBorder({
       style={
         {
           '--border-radius': `${borderRadius}px`,
+          minWidth: '800px',
         } as React.CSSProperties
       }
       className={cn(

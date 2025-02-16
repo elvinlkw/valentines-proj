@@ -53,6 +53,7 @@ export default {
       },
       animation: {
         shine: 'shine var(--duration) infinite linear',
+        'line-shadow': 'line-shadow 15s linear infinite',
       },
       keyframes: {
         shine: {
@@ -65,6 +66,10 @@ export default {
           to: {
             'background-position': '0% 0%',
           },
+        },
+        'line-shadow': {
+          '0%': { 'background-position': '0 0' },
+          '100%': { 'background-position': '100% -100%' },
         },
       },
     },
