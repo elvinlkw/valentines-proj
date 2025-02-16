@@ -6,6 +6,7 @@
 
 body {
   background-color: #ffe2e2;
+  font-family: 'Caveat Brush', serif;
 }
 
 @layer base {

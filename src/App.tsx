@@ -3,18 +3,6 @@ import { ShineBorder } from '@/components/magicui/shine-border';
 import { LineShadowText } from '@/components/magicui/line-shadow-text';
 import { SparklesText } from '@/components/magicui/sparkles-text';
 
-const cardContainerStyle = {
-  display: 'grid',
-  width: '100%',
-  height: '100%',
-  gridTemplateColumns: '1fr 1fr',
-  alignContent: 'center',
-  justifyItems: 'center',
-  fontFamily: "'Caveat Brush', serif",
-  backgroundColor: '#fff',
-  minHeight: '500px',
-};
-
 function App() {
   return (
     <>
@@ -29,8 +17,8 @@ function App() {
             className="w-full border-red-400 rounded-xl h-3/5 min-h-max"
             style={{ borderWidth: '16px', boxSizing: 'border-box' }}
           >
-            <div style={cardContainerStyle}>
-              <div className="flex flex-col gap-8 items-center">
+            <div className="grid w-full h-full grid-cols-2 content-center justify-items-center min-h-[500px]">
+              <div className="flex flex-col gap-8 items-center max-w-[500px]">
                 <h1 className="text-7xl text-red-500 rotate-2 w-3/4 text-center">
                   Scratch to{' '}
                   <LineShadowText shadowColor="red">Reveal!!</LineShadowText>
