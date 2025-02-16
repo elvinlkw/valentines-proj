@@ -88,6 +88,7 @@ export const ScratchToReveal: React.FC<ScratchToRevealProps> = ({
       document.removeEventListener('touchend', handleDocumentTouchEnd);
       document.removeEventListener('touchcancel', handleDocumentTouchEnd);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isScratching]);
 
   const handleMouseDown = () => setIsScratching(true);
@@ -157,14 +158,16 @@ export const ScratchToReveal: React.FC<ScratchToRevealProps> = ({
       }}
       animate={controls}
     >
-      <canvas
-        ref={canvasRef}
-        width={width}
-        height={height}
-        className="absolute left-0 top-0"
-        onMouseDown={handleMouseDown}
-        onTouchStart={handleTouchStart}
-      ></canvas>
+      {!isComplete && (
+        <canvas
+          ref={canvasRef}
+          width={width}
+          height={height}
+          className="absolute left-0 top-0"
+          onMouseDown={handleMouseDown}
+          onTouchStart={handleTouchStart}
+        />
+      )}
       {children}
     </motion.div>
   );

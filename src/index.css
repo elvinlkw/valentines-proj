@@ -3,10 +3,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'tailwindcss';
 
 body {
-  background-color: var(--color-red-100);
+  background-color: #ffe2e2;
 }
 
 @layer base {
