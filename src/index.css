@@ -9,13 +9,13 @@ body {
   font-family: 'Caveat Brush', serif;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
 }
 
 @media screen and (max-width: 768px) {
   body {
     width: 100svw;
     height: 100svh;
+    overflow: hidden;
   }
 }
 
