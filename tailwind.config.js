@@ -53,7 +53,9 @@ export default {
       },
       animation: {
         shine: 'shine var(--duration) infinite linear',
-        'line-shadow': 'line-shadow 15s linear infinite',
+        tossing: 'tossing 0.75s infinite ease',
+        'card-jump': 'cardJump 0.5s ease 0.5s forwards',
+        'line-shadow': 'lineShadow 15s linear infinite',
       },
       keyframes: {
         shine: {
@@ -67,7 +69,26 @@ export default {
             'background-position': '0% 0%',
           },
         },
-        'line-shadow': {
+        tossing: {
+          '0%': {
+            transform: 'rotate(-4deg)',
+          },
+          '50%': {
+            transform: 'rotate(4deg)',
+          },
+          '100%': {
+            transform: 'rotate(-4deg)',
+          },
+        },
+        cardJump: {
+          from: {
+            transform: 'translateY(0)',
+          },
+          to: {
+            transform: 'translateY(-200px)',
+          },
+        },
+        lineShadow: {
           '0%': { 'background-position': '0 0' },
           '100%': { 'background-position': '100% -100%' },
         },

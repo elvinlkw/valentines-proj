@@ -10,7 +10,7 @@ export const LoveLetter = ({ onAnimationEnd }: LoveLetterProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = useCallback(
-    (event: MouseEvent<HTMLAnchorElement>) => {
+    (event: MouseEvent<HTMLButtonElement>) => {
       event.preventDefault();
       setIsOpen(true);
       setTimeout(() => {
@@ -44,27 +44,37 @@ export const LoveLetter = ({ onAnimationEnd }: LoveLetterProps) => {
           </symbol>
         </defs>
       </svg>
-      <div style={{ width: '100%', height: '100%' }}>
-        <a
-          className="envelope-wrapper js-open-envelope"
-          href="#"
-          onClick={handleClick}
-        >
-          <div className={cn('envelope', { open: isOpen, tossing: !isOpen })}>
+      <div className="w-full h-full">
+        <div className="flex justify-center items-center h-screen">
+          <div
+            className={cn('envelope', {
+              open: isOpen,
+              'animate-tossing': !isOpen,
+            })}
+          >
             <div className="envelope__side envelope__side--top"></div>
-            <div className={cn('envelope__card', { open: isOpen })}>
+            <div
+              className={cn('envelope__card', {
+                'animate-card-jump z-[1]': isOpen,
+              })}
+            >
               <p className="envelope__card-text">
-                Happy <br /> Valentine's <br /> Day!❤️
+                Happy Valentine's Day Mary J! ❤️
               </p>
             </div>
             <div className="envelope__side envelope__side--right"></div>
             <div className="envelope__side envelope__side--left"></div>
             <div className="envelope__side envelope__side--bottom"></div>
-            <svg className="heart">
-              <use xlinkHref="#icon-heart"></use>
-            </svg>
+            <button
+              className="heart-wrapper cursor-pointer"
+              onClick={handleClick}
+            >
+              <svg className="heart">
+                <use xlinkHref="#icon-heart"></use>
+              </svg>
+            </button>
           </div>
-        </a>
+        </div>
       </div>
     </>
   );

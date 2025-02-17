@@ -1,11 +1,3 @@
-.envelope-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: block;
-  transform: translate(-50%, -20%);
-}
-
 .envelope {
   position: relative;
   display: block;
@@ -23,13 +15,7 @@
   height: 200px;
   margin: 0 25px;
   background-color: #f5f6d6;
-}
-
-.envelope .envelope__card.open {
-  -webkit-animation: cardJump 0.5s ease 0.5s forwards;
-  -o-animation: cardJump 0.5s ease 0.5s forwards;
-  animation: cardJump 0.5s ease 0.5s forwards;
-  z-index: 1;
+  padding: 12px;
 }
 
 .envelope .enveloper__card-text {
@@ -83,12 +69,16 @@
   border-color: transparent transparent #c9d0d2 transparent;
 }
 
-.heart {
+.heart-wrapper {
   position: relative;
   top: 50%;
   left: 50%;
   margin-top: -25%;
   margin-left: -25px;
+}
+
+.heart {
+  position: relative;
   width: 50px;
   fill: red;
   z-index: 2;
@@ -102,60 +92,4 @@
 
 .envelope.open:hover .heart {
   transform: none;
-}
-
-.tossing {
-  animation-name: tossing;
-  -webkit-animation-name: tossing;
-
-  animation-duration: 0.75s;
-  -webkit-animation-duration: 0.75s;
-
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-}
-
-@keyframes tossing {
-  0% {
-    transform: rotate(-4deg);
-  }
-  50% {
-    transform: rotate(4deg);
-  }
-  100% {
-    transform: rotate(-4deg);
-  }
-}
-
-@-webkit-keyframes tossing {
-  0% {
-    -webkit-transform: rotate(-4deg);
-  }
-  50% {
-    -webkit-transform: rotate(4deg);
-  }
-  100% {
-    -webkit-transform: rotate(-4deg);
-  }
-}
-
-@keyframes cardJump {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-200px);
-  }
-}
-
-@-webkit-keyframes cardJump {
-  from {
-    -webkit-transform: translateY(0);
-  }
-  to {
-    -webkit-transform: translateY(-200px);
-  }
 }
