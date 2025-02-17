@@ -36,11 +36,10 @@ export function ShineBorder({
       style={
         {
           '--border-radius': `${borderRadius}px`,
-          minWidth: '800px',
         } as React.CSSProperties
       }
       className={cn(
-        'relative min-h-[60px] w-fit min-w-[300px] place-items-center rounded-[--border-radius] bg-background border',
+        'relative min-h-[60px] w-screen md:w-fit md:min-w-[300px] place-items-center rounded-[--border-radius] bg-background border',
         className
       )}
     >

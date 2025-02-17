@@ -21,10 +21,10 @@ export const Scratch = () => {
         manualstart
       />
       <ScratchToReveal
-        width={375}
-        height={375}
+        width={350}
+        height={350}
         minScratchPercentage={50}
-        className="flex items-center justify-center overflow-hidden rounded-2xl border-2 bg-gray-100"
+        className="flex items-center justify-center overflow-hidden rounded-2xl border-2 bg-gray-100 md:w-[375px] md:h-[375px]"
         gradientColors={['#A97CF8', '#F38CB8', '#FDCC92']}
         onComplete={handleConfetti}
       >

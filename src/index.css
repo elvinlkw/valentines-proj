@@ -7,6 +7,9 @@
 body {
   background-color: #ffe2e2;
   font-family: 'Caveat Brush', serif;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 @layer base {
