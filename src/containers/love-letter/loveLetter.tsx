@@ -9,16 +9,16 @@ type LoveLetterProps = {
 export const LoveLetter = ({ onAnimationEnd }: LoveLetterProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleClick = useCallback(
-    (event: MouseEvent<HTMLButtonElement>) => {
-      event.preventDefault();
-      setIsOpen(true);
-      setTimeout(() => {
-        onAnimationEnd?.();
-      }, 2000);
-    },
-    [onAnimationEnd]
-  );
+  const handleClick = useCallback((event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    setIsOpen(true);
+  }, []);
+
+  const handleLetterAnimationEnd = useCallback(() => {
+    setTimeout(() => {
+      onAnimationEnd?.();
+    }, 2000);
+  }, [onAnimationEnd]);
 
   return (
     <>
@@ -57,6 +57,7 @@ export const LoveLetter = ({ onAnimationEnd }: LoveLetterProps) => {
               className={cn('envelope__card', {
                 'animate-card-jump z-[1]': isOpen,
               })}
+              onAnimationEnd={handleLetterAnimationEnd}
             >
               <p className="envelope__card-text">
                 Happy Valentine's Day Mary J! ❤️
