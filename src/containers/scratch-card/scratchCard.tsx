@@ -5,7 +5,7 @@ import { Scratch } from '@/components/scratch/scratch';
 
 export const ScratchCard = () => {
   return (
-    <div className="container mx-auto flex justify-center items-center">
+    <div className="container mx-auto flex justify-center items-center min-h-screen">
       <ShineBorder
         className="relative"
         borderWidth={5}

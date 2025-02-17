@@ -1,7 +1,21 @@
-import { ScratchCard } from '@/containers/scratch-card';
+import { useCallback, useState } from 'react';
+
+import { LoveLetter, ScratchCard } from '@/containers';
+
+type RenderPhase = 'initial' | 'scratch-card';
 
 function App() {
-  return <ScratchCard />;
+  const [phase, setPhase] = useState<RenderPhase>('initial');
+
+  const handleNextPhase = useCallback(() => {
+    setPhase('scratch-card');
+  }, []);
+
+  return phase === 'initial' ? (
+    <LoveLetter onAnimationEnd={handleNextPhase} />
+  ) : (
+    <ScratchCard />
+  );
 }
 
 export default App;
