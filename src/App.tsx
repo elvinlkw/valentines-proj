@@ -17,7 +17,7 @@ function App() {
             className="w-full border-red-400 rounded-xl h-3/5 min-h-max"
             style={{ borderWidth: '16px', boxSizing: 'border-box' }}
           >
-            <div className="grid w-full h-full grid-cols-2 content-center justify-items-center min-h-[500px]">
+            <div className="grid w-full h-full grid-cols-2 items-center justify-items-center min-h-[500px]">
               <div className="flex flex-col gap-8 items-center max-w-[500px]">
                 <h1 className="text-7xl text-red-500 rotate-2 w-3/4 text-center">
                   Scratch to{' '}
