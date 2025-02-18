@@ -6,7 +6,7 @@ import { Particles } from '@/components/magicui/particles';
 type RenderPhase = 'initial' | 'scratch-card';
 
 function App() {
-  const [phase, setPhase] = useState<RenderPhase>('scratch-card');
+  const [phase, setPhase] = useState<RenderPhase>('initial');
 
   const handleNextPhase = useCallback(() => {
     setPhase('scratch-card');
