@@ -29,7 +29,7 @@ export const Scratch = () => {
         width={isMobile ? MOBILE_SIZE : DEFAULT_SIZE}
         height={isMobile ? MOBILE_SIZE : DEFAULT_SIZE}
         className="flex items-center justify-center overflow-hidden rounded-2xl border-2 bg-gray-100"
-        gradientColors={['#CCC', '#DDD', '#CCC']}
+        gradientColors={['#CCC', '#EEE', '#CCC']}
         onComplete={handleConfetti}
       >
         <img src={image} />

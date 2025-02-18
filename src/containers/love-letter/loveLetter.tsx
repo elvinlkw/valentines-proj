@@ -2,16 +2,20 @@ import { MouseEvent, useCallback, useState } from 'react';
 import { cn } from '@/lib/utils';
 import './loveLetter.css';
 
+import { BorderBeam } from '@/components/magicui/border-beam';
+
 type LoveLetterProps = {
   onAnimationEnd?: () => void;
 };
 
 export const LoveLetter = ({ onAnimationEnd }: LoveLetterProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showBorderBeam, setShowBorderBeam] = useState(true);
 
   const handleClick = useCallback((event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     setIsOpen(true);
+    setShowBorderBeam(false);
   }, []);
 
   const handleLetterAnimationEnd = useCallback(() => {
@@ -47,14 +51,29 @@ export const LoveLetter = ({ onAnimationEnd }: LoveLetterProps) => {
       <div className="w-full h-full">
         <div className="flex justify-center items-center h-screen">
           <div
-            className={cn('envelope', {
+            className={cn('envelope bg-slate-300 shadow-2xl', {
               open: isOpen,
               'animate-tossing': !isOpen,
             })}
           >
+            {showBorderBeam && (
+              <>
+                <BorderBeam
+                  duration={6}
+                  size={200}
+                  className="from-transparent via-red-500 to-transparent"
+                />
+                <BorderBeam
+                  duration={6}
+                  delay={3}
+                  size={200}
+                  className="from-transparent via-blue-500 to-transparent"
+                />
+              </>
+            )}
             <div className="envelope__side envelope__side--top"></div>
             <div
-              className={cn('envelope__card', {
+              className={cn('envelope__card bg-amber-100 shadow-lg', {
                 'animate-card-jump z-[1]': isOpen,
               })}
               onAnimationEnd={handleLetterAnimationEnd}
@@ -70,8 +89,10 @@ export const LoveLetter = ({ onAnimationEnd }: LoveLetterProps) => {
               className="heart-wrapper cursor-pointer"
               onClick={handleClick}
             >
-              <svg className="heart">
-                <use xlinkHref="#icon-heart"></use>
+              <svg className="heart fill-red-600 w-12 relative z-[2] duration-200">
+                <use
+                  xlinkHref={isOpen ? '#icon-heart-broken' : '#icon-heart'}
+                ></use>
               </svg>
             </button>
           </div>
