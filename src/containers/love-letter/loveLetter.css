@@ -75,11 +75,11 @@
   margin-left: -25px;
 }
 
-.envelope:hover .heart {
+.heart:hover {
   transform: scale(1.2);
   transition: 0.5s ease;
 }
 
-.envelope.open:hover .heart {
+.envelope.open .heart:hover {
   transform: none;
 }

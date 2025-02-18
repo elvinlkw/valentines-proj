@@ -5,7 +5,7 @@ import { Scratch } from '@/components/scratch/scratch';
 
 export const ScratchCard = () => {
   return (
-    <div className="container mx-auto flex justify-center items-center min-h-screen">
+    <div className="container mx-auto flex justify-center md:items-center md:h-screen">
       <ShineBorder
         className="relative"
         borderWidth={5}
@@ -13,10 +13,10 @@ export const ScratchCard = () => {
         duration={10}
       >
         <div
-          className="w-screen md:w-full border-red-400 rounded-xl h-3/5 min-h-max"
+          className="w-screen md:w-full border-red-400 rounded-xl h-3/5 min-h-full"
           style={{ borderWidth: '16px', boxSizing: 'border-box' }}
         >
-          <div className="grid w-full h-full grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 items-center justify-items-center min-h-[500px]">
+          <div className="grid w-full h-full grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 items-center justify-items-center min-h-[500px] p-4">
             <div className="flex flex-col gap-4 md:gap-8 items-center md:max-w-[500px]">
               <h1 className="text-5xl md:text-7xl text-red-500 rotate-2 w-3/4 text-center">
                 Scratch to{' '}
