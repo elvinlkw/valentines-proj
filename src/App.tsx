@@ -13,6 +13,11 @@ function App() {
     setPhase((prevPhase) => {
       switch (prevPhase) {
         case RenderPhase.Welcome:
+          if (sessionStorage.getItem('skipLoading') === 'true') {
+            return RenderPhase.LoveLetter;
+          }
+          return RenderPhase.Loading;
+        case RenderPhase.Loading:
           return RenderPhase.LoveLetter;
         case RenderPhase.LoveLetter:
           return RenderPhase.ScratchCard;

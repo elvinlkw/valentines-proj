@@ -11,6 +11,7 @@ interface WordRotateProps {
   motionProps?: MotionProps;
   className?: string;
   onComplete?: () => void;
+  repeat?: boolean;
 }
 
 export function WordRotate({
@@ -24,23 +25,30 @@ export function WordRotate({
   },
   className,
   onComplete,
+  repeat = false,
 }: WordRotateProps) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prevIndex) => prevIndex + 1);
+      setIndex((prevIndex) => {
+        if (repeat) {
+          return (prevIndex + 1) % words.length;
+        }
+
+        return prevIndex + 1;
+      });
     }, duration);
 
     // Clean up interval on unmount
     return () => clearInterval(interval);
-  }, [words, duration]);
+  }, [words, duration, repeat]);
 
   const handleOnExitComplete = useCallback(() => {
-    if (index === words.length && onComplete) {
+    if (index === words.length && onComplete && !repeat) {
       onComplete();
     }
-  }, [index, onComplete, words.length]);
+  }, [index, onComplete, words.length, repeat]);
 
   return (
     <div className="overflow-hidden py-2">
