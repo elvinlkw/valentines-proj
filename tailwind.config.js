@@ -53,7 +53,7 @@ export default {
       },
       animation: {
         shine: 'shine var(--duration) infinite linear',
-        tossing: 'tossing 0.75s infinite ease',
+        tossing: 'tossing 1s infinite ease',
         'card-jump': 'cardJump 0.5s ease 0.5s forwards',
         'line-shadow': 'lineShadow 15s linear infinite',
       },
