@@ -57,7 +57,7 @@ export const Welcome = ({ onClick }: WelcomeProps) => {
       onClick={onClick}
     >
       <WordRotate
-        className="text-4xl font-bold text-center text-black dark:text-white text-wrap"
+        className="text-4xl font-bold text-center text-black dark:text-white text-wrap px-8"
         duration={4000}
         words={[
           'Hey you!',
@@ -65,9 +65,12 @@ export const Welcome = ({ onClick }: WelcomeProps) => {
           'Welcome to the Love Portal!',
           "Your Valentine's Day Journey Begins Here!",
           'Press any key to accept your gift!',
-          "Here's a random quote for you in the meantime!",
+          "Here's some random quotes for you in the meantime!",
           ...randomQuotes,
+          "Fine..!! I'll do it myself!!",
+          '..Click!!',
         ]}
+        onComplete={onClick}
       />
     </div>
   );
