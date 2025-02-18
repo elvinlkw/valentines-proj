@@ -3,6 +3,7 @@
 import { cn } from '../../lib/utils';
 import { motion, useAnimation } from 'motion/react';
 import React, { useEffect, useRef, useState } from 'react';
+import { isMobile } from 'react-device-detect';
 
 interface ScratchToRevealProps {
   children: React.ReactNode;
@@ -111,8 +112,8 @@ export const ScratchToReveal: React.FC<ScratchToRevealProps> = ({
 
   const startAnimation = async () => {
     await controls.start({
-      scale: [1, 1.5, 1],
-      rotate: [0, 10, -10, 10, -10, 0],
+      scale: [1, 1.25, 1],
+      ...(isMobile && { rotate: [0, 10, -10, 10, -10, 0] }),
       transition: { duration: 0.5 },
     });
 
@@ -154,8 +155,10 @@ export const ScratchToReveal: React.FC<ScratchToRevealProps> = ({
       style={{
         width,
         height,
-        cursor:
-          "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNSIgc3R5bGU9ImZpbGw6I2ZmZjtzdHJva2U6IzAwMDtzdHJva2Utd2lkdGg6MXB4OyIgLz4KPC9zdmc+'), auto",
+        ...(!isComplete && {
+          cursor:
+            "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNSIgc3R5bGU9ImZpbGw6I2ZmZjtzdHJva2U6IzAwMDtzdHJva2Utd2lkdGg6MXB4OyIgLz4KPC9zdmc+'), auto",
+        }),
       }}
       animate={controls}
     >
