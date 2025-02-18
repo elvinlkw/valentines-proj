@@ -83,3 +83,24 @@
 .envelope.open .heart:hover {
   transform: none;
 }
+
+.ribbon {
+  position: absolute;
+  z-index: 2;
+}
+
+.ribbon.vertical {
+  width: 3px;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ribbon.horizontal {
+  height: 3px;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

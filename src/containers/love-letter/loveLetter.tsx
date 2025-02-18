@@ -61,6 +61,12 @@ export const LoveLetter = ({ onAnimationEnd }: LoveLetterProps) => {
         <div className="envelope__side envelope__side--right"></div>
         <div className="envelope__side envelope__side--left"></div>
         <div className="envelope__side envelope__side--bottom"></div>
+        {!isOpen && (
+          <>
+            <div className="ribbon horizontal bg-amber-400" />
+            <div className="ribbon vertical bg-amber-400" />
+          </>
+        )}
         <button className="heart-wrapper cursor-pointer" onClick={handleClick}>
           <Icon
             className="heart fill-red-600 w-12 relative z-[2] duration-200"

@@ -13,7 +13,7 @@ export const ScratchCard = () => {
         duration={10}
       >
         <div
-          className="w-screen md:w-full border-red-400 rounded-xl h-3/5 min-h-full"
+          className="w-screen md:w-full border-red-400 rounded-xl h-3/5 min-h-full shadow-2xl"
           style={{ borderWidth: '16px', boxSizing: 'border-box' }}
         >
           <div className="grid w-full h-full grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 items-center justify-items-center min-h-[500px] p-4">
