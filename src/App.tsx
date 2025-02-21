@@ -3,7 +3,6 @@ import { AnimatePresence } from 'motion/react';
 import { Particles } from '@/components/magicui/particles';
 
 import { Content } from '@/containers';
-
 import { RenderPhase } from '@/types';
 
 function App() {
@@ -34,7 +33,6 @@ function App() {
         quantity={300}
         ease={80}
         color={'#000'}
-        refresh
       />
 
       <AnimatePresence>

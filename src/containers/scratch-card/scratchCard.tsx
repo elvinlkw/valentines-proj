@@ -24,22 +24,22 @@ export const ScratchCard = () => {
               </h1>
               <div className="rotate-2 text-lg w-3/4 text-wrap">
                 <p className="text-red-500 md:mb-2">
-                  Happy Valentine's Day Mary Jane,
+                  Happy Valentine's Day baby gurl,
                 </p>
                 <p className="text-red-500">
-                  Six years and counting, and my love for you keeps on growing
-                  everyday! Scratch the card to reveal one of my favorite
-                  memories of us.
+                  Almost 6 years and counting, and my love for you keeps on
+                  growing everyday! Every moment spent with you is a moment I
+                  never want to forget.
                 </p>
                 <p className="text-red-500">
                   I'm glad you're part of my life and I can't wait to create
-                  many more amazing memories with you! I love you forever and
-                  always!
+                  many more amazing memories with you!
                 </p>
+                <p className="text-red-500 md:mt-2">I love you 24/7, 365!</p>
                 <SparklesText
                   className="text-red-500 text-end md:mt-2 pr-4 text-md"
                   sparklesCount={5}
-                  text="Love, Elvin"
+                  text="Yours, Elvin"
                 />
               </div>
             </div>
